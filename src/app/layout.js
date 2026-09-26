@@ -2,6 +2,7 @@ import { Oswald, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const oswald = Oswald({
@@ -29,6 +30,16 @@ export default function RootLayout({ children }) {
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <ToastContainer
+            position="bottom-right"
+            autoClose={2500}
+            hideProgressBar={false}
+            newestOnTop
+            closeOnClick
+            pauseOnHover
+            theme="dark"
+            toastClassName="bg-[#1a1a1a] border border-[#ccff00] text-white font-inter"
+          />
       </body>
     </html>
   );
