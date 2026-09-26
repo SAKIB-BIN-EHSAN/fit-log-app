@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { toast } from "react-toastify";
 import { useFitLog } from "../context/FitLogContext";
 
 export default function MyPlanPage() {
