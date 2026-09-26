@@ -1,5 +1,6 @@
 import { Oswald, Inter } from "next/font/google";
 import "./globals.css";
+import { FitLogProvider } from "./context/FitLogContext";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { ToastContainer } from "react-toastify";
@@ -27,10 +28,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${oswald.variable} ${inter.variable} antialiased`}>
-        <Navbar />
-        <main>{children}</main>
-        <Footer />
-        <ToastContainer
+        <FitLogProvider>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+          <ToastContainer
             position="bottom-right"
             autoClose={2500}
             hideProgressBar={false}
@@ -40,6 +42,7 @@ export default function RootLayout({ children }) {
             theme="dark"
             toastClassName="bg-[#1a1a1a] border border-[#ccff00] text-white font-inter"
           />
+        </FitLogProvider>
       </body>
     </html>
   );
